@@ -1,0 +1,19 @@
+{
+  "name": "akbari-portfolio",
+  "version": "1.0.0",
+  "description": "Mustafa Akbari's Portfolio Website",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'No build step required for static site'",
+    "lint": "echo 'No linting configured'"
+  },
+  "keywords": [
+    "portfolio",
+    "static-site"
+  ],
+  "author": "Mustafa Akbari",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
