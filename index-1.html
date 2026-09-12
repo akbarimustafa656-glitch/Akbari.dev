@@ -171,7 +171,7 @@
   .skill-category { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; transition: border-color 0.2s; }
   .skill-category:hover { border-color: rgba(0,212,255,0.2); }
   .cat-header { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
-  .cat-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .cat-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; background: rgba(0,212,255,0.08); color: var(--cyan); }
   .cat-icon img { width: 26px; height: 26px; object-fit: contain; }
   .cat-title { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; }
   .skill-item { margin-bottom: 14px; }
@@ -205,6 +205,7 @@
   .project-tag { display: flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 5px; font-size: 11px; font-weight: 600; background: rgba(124,58,237,0.15); color: var(--purple-light); border: 1px solid rgba(124,58,237,0.2); font-family: 'JetBrains Mono', monospace; }
   .project-tag i, .project-tag .di { font-size: 12px; }
 
+
   /* EXPERIENCE */
   #experience { background: var(--bg); }
   .timeline { position: relative; padding-left: 32px; }
@@ -233,14 +234,23 @@
   .edu-badge.grade-a { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.22); color: var(--green); }
 
   /* ACHIEVEMENTS */
-  #achievements { background: var(--bg); }
+   #achievements { background: var(--bg); }
   .achievements-list { display: flex; flex-direction: column; gap: 16px; }
   .achievement-item { display: flex; align-items: flex-start; gap: 18px; padding: 24px; background: var(--card); border: 1px solid var(--border); border-radius: 14px; transition: all 0.2s; }
   .achievement-item:hover { border-color: rgba(0,212,255,0.2); transform: translateX(4px); }
-  .ach-logo { width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0; background: rgba(0,212,255,0.07); border: 1px solid rgba(0,212,255,0.15); display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 6px; }
+  .ach-logo { width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0; background: rgba(0,212,255,0.07); border: 1px solid rgba(0,212,255,0.15); display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 6px; color: var(--cyan); font-size: 24px; }
   .ach-logo img { width: 100%; height: 100%; object-fit: contain; filter: brightness(1.1); }
   .ach-year { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--cyan); margin-bottom: 4px; }
   .ach-title { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+
+  /* REFERENCES */
+  #references { background: var(--bg); }
+  .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 24px; }
+  .ref-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
+  .ref-name { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .ref-title { color: var(--purple-light); font-size: 13px; margin-bottom: 12px; }
+  .ref-email { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--cyan); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+  .ref-email:hover { text-decoration: underline; }
 
   /* FOOTER */
   footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 48px 40px; text-align: center; }
@@ -303,6 +313,7 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#achievements">Awards</a></li>
+    <li><a href="#references">References</a></li>
   </ul>
   <a href="#social" class="btn-secondary" style="padding:9px 18px;font-size:13px;">
     <i class="fas fa-share-alt"></i> Connect
@@ -325,9 +336,7 @@
         <span id="typewriter"></span><span class="cursor"></span>
       </div>
       <p class="hero-desc">
-        Founder of "bahoush" technological company with a high performance of designing and developing
-        softwares in every field of software development.
-        Passionate about building intelligent systems with machine learning, developing robust Python applications, and crafting high-performance software solutions. Competitive programmer and two-time ICPC participant based in Kabul, Afghanistan. 7th semester student of Software Engineering at Gharjistan university. Familiar with many programming languages beside the Python. Familiar with many software development tools, AI agents and many technologies. Worked as software engineer in many software projects that you can find in projects part, English instructore and private store manager.
+        Software Engineering student (7th semester) at Gharjistan University with hands-on experience building machine learning models and full-stack mobile applications. Two-time ICPC Asia Kabul Regional participant, ranked 6th in a national IT exhibition hosted by Afghanistan's Ministry of Information Technology. Comfortable across the full Python data-science workflow and JavaScript/React Native development, with a track record of shipping complete, well-documented projects from data to deployment.
       </p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary"><i class="fas fa-code-branch"></i> View Projects</a>
@@ -409,165 +418,66 @@
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-inner">
-    <div class="section-label fade-in">Tech Stack</div>
-    <h2 class="section-title fade-in">Skills &amp; Technologies</h2>
+    <div class="section-label">Expertise</div>
+    <h2 class="section-title">Technical Skills</h2>
     <div class="skills-categories">
-
-      <!-- ML Category -->
-      <div class="skill-category fade-in">
+      
+      <!-- Languages -->
+      <div class="skill-category">
         <div class="cat-header">
-          <div class="cat-icon" style="background:rgba(124,58,237,0.15)">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="3" fill="#A78BFA"/>
-              <circle cx="4" cy="6" r="2" fill="#7C3AED"/>
-              <circle cx="20" cy="6" r="2" fill="#7C3AED"/>
-              <circle cx="4" cy="18" r="2" fill="#7C3AED"/>
-              <circle cx="20" cy="18" r="2" fill="#7C3AED"/>
-              <line x1="4" y1="6" x2="12" y2="12" stroke="#A78BFA" stroke-width="1.5"/>
-              <line x1="20" y1="6" x2="12" y2="12" stroke="#A78BFA" stroke-width="1.5"/>
-              <line x1="4" y1="18" x2="12" y2="12" stroke="#A78BFA" stroke-width="1.5"/>
-              <line x1="20" y1="18" x2="12" y2="12" stroke="#A78BFA" stroke-width="1.5"/>
-              <circle cx="4" cy="12" r="1.5" fill="#00D4FF"/>
-              <circle cx="20" cy="12" r="1.5" fill="#00D4FF"/>
-              <line x1="4" y1="12" x2="12" y2="12" stroke="#00D4FF" stroke-width="1.2" stroke-dasharray="2 1"/>
-              <line x1="20" y1="12" x2="12" y2="12" stroke="#00D4FF" stroke-width="1.2" stroke-dasharray="2 1"/>
-            </svg>
-          </div>
-          <span class="cat-title">Machine Learning</span>
-        </div>
-        <!-- Python -->
-        <div class="skill-item">
-          <div class="skill-row">
-            <span class="skill-name"><i class="devicon-python-plain" style="color:#3776AB;font-size:18px"></i> Python</span>
-            <span class="skill-pct">90%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" data-w="90"></div></div>
-        </div>
-        <!-- Scikit-Learn -->
-        <div class="skill-item">
-          <div class="skill-row">
-            <span class="skill-name">
-              <svg width="18" height="18" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="30" cy="30" rx="28" ry="28" fill="#F7931E" opacity="0.15"/>
-                <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="9" font-family="Arial" font-weight="bold" fill="#F7931E">sklearn</text>
-              </svg>
-              Scikit-Learn
-            </span>
-            <span class="skill-pct">82%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" data-w="82"></div></div>
-        </div>
-        <!-- NumPy -->
-        <div class="skill-item">
-          <div class="skill-row">
-            <span class="skill-name"><i class="devicon-numpy-plain" style="color:#4DABCF;font-size:18px"></i> NumPy</span>
-            <span class="skill-pct">85%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
-        </div>
-        <!-- Pandas -->
-        <div class="skill-item">
-          <div class="skill-row">
-            <span class="skill-name"><i class="devicon-pandas-plain" style="color:#150458;font-size:18px;background:#E0D7FF;border-radius:3px;padding:1px"></i> Pandas</span>
-            <span class="skill-pct">80%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
-        </div>
-        <!-- Matplotlib -->
-        <div class="skill-item">
-          <div class="skill-row">
-            <span class="skill-name">
-              <svg width="18" height="18" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <rect width="100" height="100" rx="12" fill="#11557c" opacity="0.8"/>
-                <polyline points="10,80 30,50 50,65 70,25 90,40" stroke="#ff7f0e" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Matplotlib
-            </span>
-            <span class="skill-pct">78%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" data-w="78"></div></div>
-        </div>
-      </div>
-
-      <!-- Software Engineering Category -->
-      <div class="skill-category fade-in">
-        <div class="cat-header">
-          <div class="cat-icon" style="background:rgba(0,212,255,0.12)">
-            <i class="devicon-cplusplus-plain" style="color:#00D4FF;font-size:24px"></i>
-          </div>
-          <span class="cat-title">Software Engineering</span>
-        </div>
-        <!-- Java -->
-        <div class="skill-item">
-          <div class="skill-row">
-            <span class="skill-name"><i class="devicon-java-plain" style="color:#ED8B00;font-size:18px"></i> Java</span>
-            <span class="skill-pct">75%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
-        </div>
-        <!-- C++ -->
-        <div class="skill-item">
-          <div class="skill-row">
-            <span class="skill-name"><i class="devicon-cplusplus-plain" style="color:#00599C;font-size:18px"></i> C++</span>
-            <span class="skill-pct">80%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
-        </div>
-        <!-- DSA -->
-        <div class="skill-item">
-          <div class="skill-row">
-            <span class="skill-name">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <rect x="2" y="2" width="8" height="8" rx="2" stroke="#A78BFA" stroke-width="1.8"/>
-                <rect x="14" y="2" width="8" height="8" rx="2" stroke="#A78BFA" stroke-width="1.8"/>
-                <rect x="8" y="14" width="8" height="8" rx="2" stroke="#00D4FF" stroke-width="1.8"/>
-                <line x1="6" y1="10" x2="12" y2="14" stroke="#A78BFA" stroke-width="1.4"/>
-                <line x1="18" y1="10" x2="12" y2="14" stroke="#A78BFA" stroke-width="1.4"/>
-              </svg>
-              Data Structures &amp; Algo
-            </span>
-            <span class="skill-pct">85%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
-        </div>
-        <!-- MySQL -->
-        <div class="skill-item">
-          <div class="skill-row">
-            <span class="skill-name"><i class="devicon-mysql-plain" style="color:#00758F;font-size:18px"></i> MySQL</span>
-            <span class="skill-pct">72%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" data-w="72"></div></div>
-        </div>
-        <!-- Jupyter -->
-        <div class="skill-item">
-          <div class="skill-row">
-            <span class="skill-name"><i class="devicon-jupyter-plain" style="color:#F37726;font-size:18px"></i> Jupyter Notebook</span>
-            <span class="skill-pct">88%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" data-w="88"></div></div>
-        </div>
-      </div>
-
-      <!-- Other Tools -->
-      <div class="skill-category fade-in">
-        <div class="cat-header">
-          <div class="cat-icon" style="background:rgba(16,185,129,0.12)">
-            <i class="fas fa-tools" style="color:#10B981;font-size:20px"></i>
-          </div>
-          <span class="cat-title">Other Tools</span>
+          <div class="cat-icon"><i class="fas fa-code"></i></div>
+          <div class="cat-title">Programming Languages</div>
         </div>
         <div class="tech-tags">
-          <span class="tech-tag"><i class="fas fa-network-wired" style="color:#60A5FA"></i> Network+</span>
-          <span class="tech-tag">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#A78BFA" stroke-width="2"/><line x1="8" y1="21" x2="16" y2="21" stroke="#A78BFA" stroke-width="2"/><line x1="12" y1="17" x2="12" y2="21" stroke="#A78BFA" stroke-width="2"/></svg>
-            ICDL
-          </span>
-          <span class="tech-tag"><i class="fas fa-camera-cctv" style="color:#F59E0B"></i> CCTV Camera</span>
-          <span class="tech-tag"><i class="fas fa-robot" style="color:#10B981"></i> AI Agents</span>
-          <span class="tech-tag"><i class="fab fa-github" style="color:#fff"></i> Git / GitHub</span>
-          <span class="tech-tag"><i class="devicon-bash-plain" style="color:#4EAA25;font-size:14px"></i> Bash / CLI</span>
-          <span class="tech-tag"><i class="devicon-linux-plain" style="color:#FCC624;font-size:14px"></i> Linux</span>
-          <span class="tech-tag"><i class="devicon-vscode-plain" style="color:#007ACC;font-size:14px"></i> VS Code</span>
+          <span class="tech-tag"><i class="devicon-python-plain colored"></i> Python</span>
+          <span class="tech-tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+          <span class="tech-tag"><i class="devicon-java-plain colored"></i> Java</span>
+          <span class="tech-tag"><i class="devicon-cplusplus-plain colored"></i> C++</span>
+        </div>
+      </div>
+
+      <!-- ML & Data Science -->
+      <div class="skill-category">
+        <div class="cat-header">
+          <div class="cat-icon"><i class="fas fa-brain"></i></div>
+          <div class="cat-title">Machine Learning & Data Science</div>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag"><i class="devicon-scikitlearn-plain colored"></i> Scikit-learn</span>
+          <span class="tech-tag"><i class="devicon-tensorflow-original colored"></i> TensorFlow</span>
+          <span class="tech-tag"><i class="devicon-numpy-original colored"></i> NumPy</span>
+          <span class="tech-tag"><i class="devicon-pandas-original colored"></i> Pandas</span>
+          <span class="tech-tag"><i class="fas fa-chart-line"></i> Matplotlib</span>
+          <span class="tech-tag"><i class="fas fa-chart-bar"></i> Seaborn</span>
+          <span class="tech-tag"><i class="devicon-jupyter-plain colored"></i> Jupyter Notebook</span>
+        </div>
+      </div>
+
+      <!-- Mobile & Web -->
+      <div class="skill-category">
+        <div class="cat-header">
+          <div class="cat-icon"><i class="fas fa-mobile-alt"></i></div>
+          <div class="cat-title">Mobile & Web Development</div>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag"><i class="devicon-react-original colored"></i> React Native (Expo)</span>
+          <span class="tech-tag"><i class="devicon-nodejs-plain colored"></i> Node.js</span>
+          <span class="tech-tag"><i class="devicon-html5-plain colored"></i> HTML5</span>
+          <span class="tech-tag"><i class="devicon-css3-plain colored"></i> CSS3</span>
+        </div>
+      </div>
+
+      <!-- Databases & Tools -->
+      <div class="skill-category">
+        <div class="cat-header">
+          <div class="cat-icon"><i class="fas fa-database"></i></div>
+          <div class="cat-title">Databases & Tools</div>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+          <span class="tech-tag"><i class="devicon-sqlite-plain colored"></i> SQLite</span>
+          <span class="tech-tag"><i class="devicon-git-plain colored"></i> Git</span>
+          <span class="tech-tag"><i class="devicon-github-original"></i> GitHub</span>
         </div>
       </div>
 
@@ -578,67 +488,100 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-inner">
-    <div class="section-label fade-in">Portfolio</div>
-    <h2 class="section-title fade-in">Projects</h2>
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Featured Projects</h2>
     <div class="projects-grid">
 
-      <!-- Project 1 -->
-      <div class="project-card fade-in">
+      <!-- Personal Portfolio -->
+      <div class="project-card">
         <div class="project-header">
-          <span class="project-icon">🤖</span>
+          <div class="project-icon">🌐</div>
           <div class="project-links">
-            <!-- ★ REPLACE: لینک گیت‌هاب پروژه اول -->
-            <a href="https://github.com/akbarimustafa656-glitch/Heart-disease-prediction-Classification-ML-project" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="YOUR_LIVE_DEMO1" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+            <a href="https://akbarimustafa656-glitch.github.io/Akbari.dev" target="_blank" title="Live Site"><i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
-        <h3 class="project-name">ML Classification Model</h3>
-        <p class="project-desc">A machine learning classification project built with Scikit-Learn, featuring data preprocessing pipelines, model evaluation, and visualization using Matplotlib, NumPy and Pandas.</p>
+        <div class="project-name">Personal Portfolio Website</div>
+        <p class="project-desc">
+          Designed and built a self-contained personal portfolio and CV website to showcase projects, skills, and achievements. Implemented as a single, fully offline-portable HTML file with locally hosted assets (no external CDN dependencies) and animated UI effects.
+        </p>
         <div class="project-tags">
-          <span class="project-tag"><i class="devicon-python-plain"></i> Python</span>
-          <span class="project-tag">Scikit-Learn</span>
-          <span class="project-tag"><i class="devicon-numpy-plain"></i> NumPy</span>
-          <span class="project-tag"><i class="devicon-pandas-plain"></i> Pandas</span>
-          <span class="project-tag">Matplotlib</span>
+          <span class="project-tag">HTML</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">Git</span>
         </div>
       </div>
 
-      <!-- Project 2 -->
-      <div class="project-card fade-in">
+      <!-- Zakat Calculator -->
+      <div class="project-card">
         <div class="project-header">
-          <span class="project-icon">⚡</span>
+          <div class="project-icon">📱</div>
         </div>
-        <h3 class="project-name">Competitive Programming Solutions</h3>
-        <p class="project-desc">Collection of algorithmic solutions from ICPC contests and competitive programming platforms, implementing advanced data structures and algorithms in C++, Java and Python.</p>
+        <div class="project-name">ZAKAT Calculator — Mobile Application</div>
+        <p class="project-desc">
+          Built a fully offline mobile app for calculating Zakat under both Hanafi and Jafari jurisprudence, using live gold/silver prices. Developed with React Native (Expo) and Node.js, using SQLite for local storage. Implemented secure local authentication with JWT and SHA-256 encryption (expo-crypto).
+        </p>
         <div class="project-tags">
-          <span class="project-tag"><i class="devicon-cplusplus-plain"></i> C++</span>
-          <span class="project-tag"><i class="devicon-java-plain"></i> Java</span>
-          <span class="project-tag"><i class="devicon-python-plain"></i> Python</span>
-          <span class="project-tag">Algorithms</span>
-          <span class="project-tag">DSA</span>
+          <span class="project-tag">React Native</span>
+          <span class="project-tag">Expo</span>
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag">SQLite</span>
+          <span class="project-tag">JWT</span>
         </div>
       </div>
 
-      <!-- Project 3 (was #4) -->
-      <div class="project-card fade-in">
+      <!-- Heart Disease -->
+      <div class="project-card">
         <div class="project-header">
-          <span class="project-icon">🧠</span>
+          <div class="project-icon">❤️</div>
         </div>
-        <h3 class="project-name">AI Agent Integration</h3>
-        <p class="project-desc">Exploration of AI agent frameworks, demonstrating practical interaction with modern AI tools and building intelligent automation pipelines.</p>
+        <div class="project-name">Heart Disease Prediction — Classification ML</div>
+        <p class="project-desc">
+          Built a model to predict heart disease presence from patient clinical data (Cleveland dataset, Kaggle). Cleaned and analyzed data with Pandas, NumPy, and Matplotlib; trained and compared Logistic Regression, Random Forest, and KNN classifiers. Achieved 92.6% accuracy with Logistic Regression.
+        </p>
         <div class="project-tags">
-          <span class="project-tag"><i class="devicon-python-plain"></i> Python</span>
-          <span class="project-tag">AI Agents</span>
-          <span class="project-tag">Automation</span>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Scikit-learn</span>
+          <span class="project-tag">Pandas</span>
+          <span class="project-tag">Logistic Regression</span>
+        </div>
+      </div>
+
+      <!-- Car Price -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🚗</div>
+        </div>
+        <div class="project-name">Car Price Prediction — Regression ML</div>
+        <p class="project-desc">
+          Built a regression pipeline to predict car prices from vehicle specifications (CarDekho dataset, Kaggle). Cleaned data, handled missing values, and encoded categorical features with Pandas and NumPy. Trained and compared Random Forest, Extra Trees, HistGradientBoosting, Ridge, and KNN regressors, most exceeding 98% accuracy; saved final models with Pickle.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Random Forest</span>
+          <span class="project-tag">HistGradientBoosting</span>
+          <span class="project-tag">Pickle</span>
+        </div>
+      </div>
+
+      <!-- Bulldozer Price Prediction -->
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🚜</div>
+        </div>
+        <div class="project-name">Bulldozer Price Prediction — Time-Aware ML</div>
+        <p class="project-desc">
+          Built a time-aware regression model predicting bulldozer auction prices, training on pre-2012 data and testing on post-2012 data. Engineered date/time features and handled missing data with Pandas and NumPy. Compared Random Forest, Extra Trees, Ridge, and KNN regressors; achieved best accuracy of 87.42% with Extra Trees Regressor.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Extra Trees</span>
+          <span class="project-tag">Feature Engineering</span>
+          <span class="project-tag">Time Series Split</span>
         </div>
       </div>
 
     </div>
-    <p style="margin-top:28px;color:var(--text-faint);font-size:14px;text-align:center;">
-      <i class="fab fa-github" style="margin-right:6px"></i>
-      <!-- ★ REPLACE: لینک اصلی گیت‌هابت -->
-      More projects on <a href="https://github.com/akbarimustafa656-glitch" target="_blank" style="color:var(--cyan);text-decoration:none;">GitHub →</a>
-    </p>
   </div>
 </section>
 
@@ -648,17 +591,6 @@
     <div class="section-label fade-in">Career</div>
     <h2 class="section-title fade-in">Work Experience</h2>
     <div class="timeline">
-
-      <div class="timeline-item fade-in">
-        <div class="exp-card">
-          <div class="exp-header">
-            <span class="exp-role">Founder</span>
-            <span class="exp-date">Jan 2025</span>
-          </div>
-          <div class="exp-company">bahoush technological company</div>
-          <p class="exp-desc">Created a technological company with high performance in designing and developing softwares and beneficial activites in technology's world. And with the goal of helping people have esier and more intrasting experiences in useing of technology.</p>
-        </div>
-      </div>
 
       <div class="timeline-item fade-in">
         <div class="exp-card">
@@ -765,43 +697,64 @@
 <!-- ACHIEVEMENTS -->
 <section id="achievements">
   <div class="section-inner">
-    <div class="section-label fade-in">Awards</div>
-    <h2 class="section-title fade-in">Achievements</h2>
+    <div class="section-label">Honors</div>
+    <h2 class="section-title">Achievements &amp; Awards</h2>
     <div class="achievements-list">
 
-      <div class="achievement-item fade-in">
-        <div class="ach-logo">
-          <!-- ICPC official logo SVG recreation -->
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="44" height="44">
-            <rect width="100" height="100" rx="12" fill="#003087"/>
-            <text x="50%" y="38%" dominant-baseline="middle" text-anchor="middle" font-size="18" font-family="Arial Black,Arial" font-weight="900" fill="#FFFFFF">ICPC</text>
-            <text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-size="9" font-family="Arial" fill="#FFD700" letter-spacing="1">ASIA KABUL</text>
-            <line x1="15" y1="75" x2="85" y2="75" stroke="#FFD700" stroke-width="1.5"/>
-            <polygon points="50,82 54,90 46,90" fill="#FFD700"/>
-          </svg>
-        </div>
+      <div class="achievement-item">
+        <div class="ach-logo"><i class="fas fa-trophy"></i></div>
         <div>
-          <div class="ach-year">2024</div>
-          <div class="ach-title">ICPC Asia Kabul Regional Programming Contest</div>
-          <p style="color:var(--text-dim);font-size:14px;margin-top:4px">International Collegiate Programming Contest — hosted by Kateb University, Kabul. Competed against top university teams across the region.</p>
+          <div class="ach-year">2026</div>
+          <div class="ach-title">Ranked 6th — National Coding Competition</div>
+          <p style="color:var(--text-dim); font-size:14px;">
+            Ministry of Information Technology of Afghanistan (International IT Exhibition).
+          </p>
         </div>
       </div>
 
-      <div class="achievement-item fade-in">
-        <div class="ach-logo">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="44" height="44">
-            <rect width="100" height="100" rx="12" fill="#003087"/>
-            <text x="50%" y="38%" dominant-baseline="middle" text-anchor="middle" font-size="18" font-family="Arial Black,Arial" font-weight="900" fill="#FFFFFF">ICPC</text>
-            <text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-size="9" font-family="Arial" fill="#FFD700" letter-spacing="1">ASIA KABUL</text>
-            <line x1="15" y1="75" x2="85" y2="75" stroke="#FFD700" stroke-width="1.5"/>
-            <polygon points="50,82 54,90 46,90" fill="#FFD700"/>
-          </svg>
-        </div>
+      <div class="achievement-item">
+        <div class="ach-logo"><i class="fas fa-code"></i></div>
         <div>
           <div class="ach-year">2025</div>
-          <div class="ach-title">ICPC Asia Kabul Regional Programming Contest</div>
-          <p style="color:var(--text-dim);font-size:14px;margin-top:4px">Second consecutive ICPC participation — hosted by Kateb University, Kabul. Demonstrating continued growth in algorithmic problem-solving and competitive programming.</p>
+          <div class="ach-title">Ranked 13th — ICPC Asia Kabul Regional Programming Contest</div>
+          <p style="color:var(--text-dim); font-size:14px;">
+            Competitive programming competition testing advanced algorithmic problem solving.
+          </p>
         </div>
+      </div>
+
+      <div class="achievement-item">
+        <div class="ach-logo"><i class="fas fa-code"></i></div>
+        <div>
+          <div class="ach-year">2024</div>
+          <div class="ach-title">Ranked 13th — ICPC Asia Kabul Regional Programming Contest</div>
+          <p style="color:var(--text-dim); font-size:14px;">
+            Participated in the premier competitive programming championship in the region.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section id="references">
+  <div class="section-inner">
+    <div class="section-label">Endorsements</div>
+    <h2 class="section-title">References</h2>
+    <div class="ref-grid">
+
+      <div class="ref-card">
+        <div class="ref-name">Gholam Abbas Noori</div>
+        <div class="ref-title">Dean, Faculty of Computer Science, Gharjistan University</div>
+        <a href="mailto:Abbas.noori@ghu.edu.af" class="ref-email"><i class="fas fa-envelope"></i> Abbas.noori@ghu.edu.af</a>
+      </div>
+
+      <div class="ref-card">
+        <div class="ref-name">Saifullah Mansoori</div>
+        <div class="ref-title">Vice Dean, Faculty of Computer Science, Gharjistan University</div>
+        <a href="mailto:Saifullah.Mansoori@ghu.edu.af" class="ref-email"><i class="fas fa-envelope"></i> Saifullah.Mansoori@ghu.edu.af</a>
       </div>
 
     </div>
